@@ -160,6 +160,7 @@ h2{font-family:var(--display);font-weight:900;font-size:clamp(2.3rem,4.6vw,4.1re
 .pricing{position:relative;padding:60px 0 110px}
 .price-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px,6vw,110px);align-items:center}
 .price-copy .hand{font-size:32px;display:inline-block;transform:rotate(-3deg);margin-top:26px}
+.price-copy .sub{margin-top:4px}
 .page{position:relative;background:#fff;padding:64px clamp(26px,4vw,52px) 40px;transform:rotate(1.6deg);
   box-shadow:0 2px 0 rgba(0,0,0,.04),16px 22px 40px -18px rgba(25,36,78,.45);
   background-image:repeating-linear-gradient(to bottom,transparent 0 35px,rgba(37,60,150,.12) 35px 36px);background-position:0 18px;
@@ -177,14 +178,14 @@ h2{font-family:var(--display);font-weight:900;font-size:clamp(2.3rem,4.6vw,4.1re
 .stamp{position:absolute;right:clamp(12px,4vw,40px);top:84px;font-family:var(--display);font-weight:900;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--pen);
   border:3px solid var(--pen);border-radius:10px;padding:8px 12px;transform:rotate(12deg);opacity:.9}
 .list{list-style:none;margin:26px 0 30px;padding:0 0 0 48px}
-.list li{display:flex;align-items:center;gap:14px;font-size:18px;font-weight:700;line-height:36px}
+.list li{display:flex;align-items:center;gap:14px;font-size:17px;font-weight:700;line-height:36px}
 .list svg{flex:none;width:26px;height:26px;overflow:visible}
 .list path{fill:none;stroke:#1f8a4c;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
 .page .btn{margin-left:48px}
 
 /* ============ FINAL ============ */
 .final{position:relative;padding:110px 0 150px;text-align:center}
-.final h2{margin:0 auto 34px;max-width:none;font-size:clamp(3rem,8vw,7.4rem)}
+.final h2{margin:0 auto 22px;max-width:14ch;font-size:clamp(2.8rem,7vw,6.4rem)}
 .final .wrap{padding-left:clamp(20px,4vw,48px)}
 .final .mark .sweep{height:.4em}
 .circ-stamp{position:absolute;right:max(4vw,24px);top:30px;width:150px;height:150px;animation:spin 22s linear infinite}
@@ -202,6 +203,113 @@ h2{font-family:var(--display);font-weight:900;font-size:clamp(2.3rem,4.6vw,4.1re
 .pill nav{display:flex;gap:2px}
 .pill nav a{text-decoration:none;padding:9px 12px;border-radius:999px}
 .pill nav a:hover{background:var(--aqua)}
+
+
+/* ============ PIPELINE (hero) ============ */
+.pipe{list-style:none;margin:30px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14.5px;font-weight:700}
+.pipe li{display:flex;align-items:center;gap:8px;color:var(--ink-60);transition:color .3s}
+.pipe li i{width:20px;height:20px;border-radius:50%;border:2px solid currentColor;display:grid;place-items:center;font-style:normal;font-size:11px;line-height:1;transition:background .3s,color .3s,border-color .3s}
+.pipe li.done{color:var(--ink)}
+.pipe li.done i{background:var(--marigold);border-color:var(--ink);color:var(--ink)}
+.pipe li.now i{border-style:dashed;animation:spin 2.4s linear infinite}
+
+/* ============ LOOP ============ */
+.loop{position:relative;padding:130px 0 90px}
+.loop h2,.sched h2{max-width:18ch}
+.loop-track{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(24px,4vw,56px);margin-top:72px;padding-bottom:120px}
+.stop{position:relative;text-align:left}
+.badge{position:relative;width:96px;height:96px;border-radius:50%;background:#fff;border:2.5px solid var(--ink);display:grid;place-items:center;box-shadow:5px 6px 0 rgba(25,36,78,.16);margin-bottom:22px;z-index:2}
+.stop:nth-child(odd) .badge{transform:rotate(-6deg)}.stop:nth-child(even) .badge{transform:rotate(5deg);background:var(--aqua)}
+.stop:nth-child(3) .badge{background:#fff3c8}.stop:nth-child(4) .badge{background:var(--pink)}
+.badge svg{width:46px;height:46px;overflow:visible}
+.badge path{fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.stop .hand{font-size:40px;display:block;margin-bottom:6px;color:var(--cobalt)}
+.stop p{margin:0;font-size:16.5px;line-height:1.55;max-width:26ch}
+.loop-arrows{position:absolute;inset:0;overflow:visible;pointer-events:none;z-index:1}
+.loop-arrows path{fill:none;stroke:var(--pen);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.again{position:absolute;left:50%;bottom:18px;transform:translateX(-50%) rotate(-2deg);font-size:28px;white-space:nowrap}
+
+/* ============ RULES ============ */
+.rules{padding:40px 0 60px}
+.rules ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,44px)}
+.rules li{position:relative;font-family:var(--display);font-weight:700;font-size:clamp(19px,1.7vw,23px);line-height:1.3;letter-spacing:-.01em;padding-top:52px}
+.rules li svg{position:absolute;left:-6px;top:0;width:44px;height:44px;overflow:visible}
+.rules li path{fill:none;stroke:var(--evidence);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.rules li .u{position:relative;white-space:nowrap}
+.rules li .u svg{position:absolute;left:0;top:auto;bottom:-10px;width:100%;height:12px}
+.rules li .u path{stroke:var(--marigold);stroke-width:4}
+
+/* ============ SCHEDULE ============ */
+.sched{padding:120px 0 110px}
+.sched-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,100px);align-items:center}
+.checks{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:16px}
+.checks li{display:flex;gap:14px;font-size:17px;font-weight:600;line-height:1.45}
+.checks svg{flex:none;width:26px;height:26px;margin-top:1px;overflow:visible}
+.checks path{fill:none;stroke:#1f8a4c;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.planner{position:relative;background:#fff;border:2.5px solid var(--ink);border-radius:18px;padding:22px 22px 18px;box-shadow:10px 12px 0 rgba(25,36,78,.14);transform:rotate(-1deg)}
+.planner>.tape{top:-14px;left:40%;transform:rotate(-4deg)}
+.pl-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-60)}
+.pl-top .sample{position:static;transform:rotate(2deg)}
+.days{display:grid;grid-template-columns:repeat(5,1fr);border:2px solid var(--ink);border-radius:12px;overflow:hidden;min-height:280px}
+.day{position:relative;border-left:1.5px dashed rgba(25,36,78,.22);padding:10px 8px;background-image:repeating-linear-gradient(to bottom,transparent 0 27px,rgba(37,60,150,.08) 27px 28px)}
+.day:first-child{border-left:0}
+.day h4{margin:0 0 10px;font-family:var(--display);font-weight:800;font-size:15px}
+.day.today h4{display:inline-block;background:var(--marigold);padding:0 8px;border-radius:6px}
+.mini{position:relative;background:var(--aqua);padding:9px 9px 10px;font-size:12.5px;line-height:1.35;font-weight:700;border-radius:2px 2px 12px 2px;box-shadow:4px 7px 12px -8px rgba(25,36,78,.5);margin-bottom:10px}
+.mini small{display:block;font-weight:800;font-size:10.5px;letter-spacing:.05em;color:var(--cobalt);margin-bottom:3px}
+.mini.y{background:#fff3c8}.mini.p{background:var(--pink)}
+.mini.img::after{content:"";display:block;margin-top:7px;height:34px;border-radius:6px;border:1.5px solid var(--ink);background:linear-gradient(135deg,var(--marigold),var(--evidence))}
+.rest{font-size:22px;display:block;margin-top:40px;text-align:center;transform:rotate(-8deg)}
+.pl-foot{margin-top:14px;font-size:14px;font-weight:700;display:flex;align-items:center;gap:10px}
+.pl-foot .pulse{width:10px;height:10px;border-radius:50%;background:#1f8a4c;box-shadow:0 0 0 0 rgba(31,138,76,.5);animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(31,138,76,0)}100%{box-shadow:0 0 0 0 rgba(31,138,76,0)}}
+
+/* ============ MARIGOLD ============ */
+.mari{padding:40px 0 60px}
+.mari-card{position:relative;background:var(--marigold);border:2.5px solid var(--ink);border-radius:26px;padding:clamp(34px,5vw,70px);box-shadow:12px 14px 0 var(--ink);transform:rotate(-.8deg);
+  display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(30px,5vw,80px);align-items:center;overflow:hidden}
+.mari-card::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(to bottom,transparent 0 39px,rgba(25,36,78,.1) 39px 40px);pointer-events:none}
+.mari-card>*{position:relative}
+.mari-card .sub{max-width:36ch}
+.mari-card .hand{color:var(--ink);font-size:30px;display:inline-block;transform:rotate(-3deg);margin-bottom:10px}
+.moon{position:absolute;right:28px;top:22px;width:54px;height:54px}
+.moon path{fill:none;stroke:var(--ink);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.log{background:var(--paper);border:2.5px solid var(--ink);border-radius:16px;padding:10px 20px;box-shadow:6px 7px 0 rgba(25,36,78,.25)}
+.row{display:grid;grid-template-columns:62px 1fr auto;align-items:center;gap:14px;padding:15px 0;border-top:1.5px dashed rgba(25,36,78,.2);font-weight:700;font-size:16px;line-height:1.35}
+.row:first-child{border-top:0}
+.row time{font-family:var(--hand);font-size:24px;color:var(--ink-60)}
+.tag{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:2px solid var(--ink);white-space:nowrap}
+.tag.auto{background:var(--marigold)}
+.tag.pass{background:#e6f4ec;color:#146b3a;border-color:#146b3a}
+.tag.you{background:var(--cobalt);color:#fff;border-color:var(--ink)}
+.row.you{position:relative}
+.row.you .tag{animation:nudge 2.4s ease-in-out infinite}
+@keyframes nudge{0%,80%,100%{transform:none}85%{transform:rotate(-6deg) scale(1.06)}90%{transform:rotate(6deg) scale(1.06)}}
+
+@media (max-width:980px){
+  .loop-track{grid-template-columns:1fr 1fr;padding-bottom:40px}
+  .loop-arrows,.again{display:none}
+  .rules ul{grid-template-columns:1fr}
+  .sched-grid,.mari-card{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .loop{padding:80px 0 50px}
+  .loop-track{grid-template-columns:1fr;gap:34px;margin-top:44px}
+  .stop{display:grid;grid-template-columns:76px 1fr;gap:0 18px;align-items:start}
+  .badge{width:72px;height:72px;margin:0;grid-row:span 2}.badge svg{width:36px;height:36px}
+  .stop .hand{font-size:34px}
+  .sched{padding:80px 0 60px}
+  .planner{padding:16px 12px 14px}
+  .days{grid-template-columns:repeat(5,minmax(0,1fr));min-height:230px}
+  .day{padding:8px 3px;min-width:0}.day h4{font-size:12px}
+  .mini{overflow-wrap:anywhere;hyphens:auto}
+  .mini.img::after{height:22px}
+  .mini{font-size:10.5px;padding:6px 5px}.mini small{font-size:9px}
+  .rest{font-size:17px}
+  .mari-card{padding:30px 22px;box-shadow:7px 8px 0 var(--ink)}
+  .row{grid-template-columns:48px 1fr;gap:4px 12px}.row .tag{grid-column:2;justify-self:start}
+  .moon{width:40px;height:40px;right:16px;top:14px}
+}
 
 /* ============ RESPONSIVE ============ */
 @media (max-width:980px){
@@ -257,7 +365,8 @@ h2{font-family:var(--display);font-weight:900;font-size:clamp(2.3rem,4.6vw,4.1re
   <div class="wrap">
     <a class="logo" href="#top" aria-label="troofrnd home">troofrnd<i>.</i></a>
     <div class="nav-links">
-      <a class="txt" href="#story">How</a>
+      <a class="txt" href="#how">How it works</a>
+      <a class="txt" href="#story">Evidence</a>
       <a class="txt" href="#pricing">Pricing</a>
       <a class="txt" href="#">Log in</a>
       <a class="btn sm" href="#pricing">Start free</a>
@@ -277,11 +386,14 @@ h2{font-family:var(--display);font-weight:900;font-size:clamp(2.3rem,4.6vw,4.1re
           <span class="line" aria-hidden="true"><span><span class="mark">We find<span class="sweep"></span></span></span></span>
           <span class="line" aria-hidden="true"><span>the receipt.</span></span>
         </h1>
-        <p class="lede js-in">troofrnd finds a real, dated source for every number in your post.</p>
+        <p class="lede js-in">troofrnd reads today's India D2C and startup news, drafts the post in your voice, and finds a real, dated source for every number.</p>
         <div class="cta-row js-in">
           <a class="btn lg magnet" href="#pricing">Start free <span class="arr">→</span></a>
           <span class="cta-note hand"><svg viewBox="0 0 62 40" aria-hidden="true"><path class="draw" d="M58 30C44 36 22 34 8 18M8 18l2 11M8 18l11 1"/></svg>No card needed</span>
         </div>
+        <ul class="pipe js-in" id="pipe" aria-label="What troofrnd is doing">
+          <li><i>✓</i>Crawling sources</li><li><i>✓</i>Drafting in your voice</li><li><i>✓</i>Checking claims</li><li><i>✓</i>Queued</li>
+        </ul>
       </div>
 
       <div class="stage" id="stage">
@@ -319,14 +431,30 @@ h2{font-family:var(--display);font-weight:900;font-size:clamp(2.3rem,4.6vw,4.1re
   <div class="scroll-hint hand" aria-hidden="true"><svg viewBox="0 0 22 38"><path d="M11 2v32M3 26l8 9 8-9"/></svg>watch it check</div>
 </section>
 
+<!-- ================= LOOP ================= -->
+<section class="loop" id="how">
+  <div class="wrap">
+    <h2 class="rv">You bring the judgement. We bring the <span class="mark sc">receipts.<span class="sweep"></span></span></h2>
+    <p class="sub rv">Most tools hand you a blank box. This one starts from what happened this week.</p>
+    <div class="loop-track" id="loopTrack">
+      <div class="stop"><div class="badge"><svg viewBox="0 0 32 32" aria-hidden="true"><path class="draw" d="M5 7h18v19H8a3 3 0 0 1-3-3zM23 11h4v12a3 3 0 0 1-3 3M9 12h10M9 16h10M9 20h6"/></svg></div><span class="hand">Crawl</span><p>Trusted publishers, read every morning, filtered to your niche.</p></div>
+      <div class="stop"><div class="badge"><svg viewBox="0 0 32 32" aria-hidden="true"><path class="draw" d="M22 4l6 6L12 26l-8 2 2-8zM19 7l6 6"/></svg></div><span class="hand">Write</span><p>Drafted in your voice, from a Content Brain you fill in once.</p></div>
+      <div class="stop"><div class="badge"><svg viewBox="0 0 32 32" aria-hidden="true"><path class="draw" d="M14 4a10 10 0 1 1 0 20a10 10 0 1 1 0-20zM21 21l8 8M9 14l3 3 6-6"/></svg></div><span class="hand">Prove</span><p>A second model checks each claim against its source.</p></div>
+      <div class="stop"><div class="badge"><svg viewBox="0 0 32 32" aria-hidden="true"><path class="draw" d="M2 15L30 3 20 30l-6-11zM14 19L30 3"/></svg></div><span class="hand">Publish</span><p>Straight to LinkedIn, through the official API, at your hour.</p></div>
+      <svg class="loop-arrows" id="loopArrows" aria-hidden="true"></svg>
+      <span class="again hand">and again tomorrow morning</span>
+    </div>
+  </div>
+</section>
+
 <!-- ================= STORY ================= -->
 <section class="story" id="story">
   <div class="pin" id="pin">
     <div class="wrap">
       <div class="story-head">
         <div>
-          <h2>Every claim gets its receipt.</h2>
-          <p class="sub">Watch it chase each number, and cross out what fails.</p>
+          <h2>Never invent a number again.</h2>
+          <p class="sub">Every fact gets a source you can click. Opinions stay yours.</p>
         </div>
       </div>
       <div class="board" id="board">
@@ -347,13 +475,73 @@ h2{font-family:var(--display);font-weight:900;font-size:clamp(2.3rem,4.6vw,4.1re
   </div>
 </section>
 
+<!-- ================= RULES ================= -->
+<section class="rules">
+  <div class="wrap">
+    <ul>
+      <li><svg viewBox="0 0 44 44" aria-hidden="true"><path class="draw" d="M8 8l28 28M36 8L8 36"/></svg>No source, no publish. <span class="u">Not even by you.<svg viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path class="draw" d="M2 8C30 2 70 12 98 5"/></svg></span></li>
+      <li><svg viewBox="0 0 44 44" aria-hidden="true"><path class="draw" d="M22 4a18 18 0 1 1 0 36a18 18 0 1 1 0-36zM14 22l6 6 11-12"/></svg>The checker <span class="u">never wrote<svg viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path class="draw" d="M2 8C30 2 70 12 98 5"/></svg></span> the post.</li>
+      <li><svg viewBox="0 0 44 44" aria-hidden="true"><path class="draw" d="M34 14A14 14 0 1 0 36 26M36 6v9h-9"/></svg>Edit a line and it gets <span class="u">re-checked.<svg viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path class="draw" d="M2 8C30 2 70 12 98 5"/></svg></span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= SCHEDULE ================= -->
+<section class="sched" id="schedule">
+  <div class="wrap">
+    <div class="sched-grid">
+      <div>
+        <h2 class="rv">Batch a week on Sunday. Forget it till <span class="mark sc">Friday.<span class="sweep"></span></span></h2>
+        <ul class="checks">
+          <li><svg viewBox="0 0 26 26" aria-hidden="true"><path class="draw" d="M3 14l7 7L23 4"/></svg>Official LinkedIn API. No extension pretending to be you.</li>
+          <li><svg viewBox="0 0 26 26" aria-hidden="true"><path class="draw" d="M3 14l7 7L23 4"/></svg>Text and image posts, formatted the way LinkedIn wants.</li>
+          <li><svg viewBox="0 0 26 26" aria-hidden="true"><path class="draw" d="M3 14l7 7L23 4"/></svg>A failed post tells you why, instead of vanishing.</li>
+        </ul>
+      </div>
+      <div class="planner" id="planner">
+        <span class="tape" aria-hidden="true"></span>
+        <div class="pl-top"><span>Your week</span><span class="sample">Sample</span></div>
+        <div class="days">
+          <div class="day today"><h4>Mon</h4><div class="mini"><small>9:00</small>Dark store economics</div></div>
+          <div class="day"><h4>Tue</h4><div class="mini y img"><small>9:30</small>This week in D2C</div></div>
+          <div class="day"><h4>Wed</h4><span class="rest hand">rest day</span></div>
+          <div class="day"><h4>Thu</h4><div class="mini p"><small>8:45</small>A contrarian q-comm take</div></div>
+          <div class="day"><h4>Fri</h4><div class="mini"><small>10:00</small>Why that round matters</div></div>
+        </div>
+        <div class="pl-foot"><span class="pulse" aria-hidden="true"></span>4 posts queued · next today at 9:00 IST</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARIGOLD ================= -->
+<section class="mari">
+  <div class="wrap">
+    <div class="mari-card" id="mari">
+      <svg class="moon" viewBox="0 0 54 54" aria-hidden="true"><path class="draw" d="M36 8a20 20 0 1 0 12 30A16 16 0 0 1 36 8zM44 6v6M41 9h6"/></svg>
+      <div>
+        <span class="hand">while you were asleep</span>
+        <h2>Marigold means the machine did it.</h2>
+        <p class="sub">It is never a button. You always know what the software decided and what you did.</p>
+      </div>
+      <div class="log" id="log">
+        <div class="row"><time>5:40</time><span>Read this morning's sources</span><span class="tag auto">Auto</span></div>
+        <div class="row"><time>6:10</time><span>Drafted a post in your voice</span><span class="tag auto">Auto</span></div>
+        <div class="row"><time>6:12</time><span>Checked every claim</span><span class="tag pass">✓ Passed</span></div>
+        <div class="row you"><time>9:00</time><span>Waiting on you to approve</span><span class="tag you">Your call</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= PRICING ================= -->
 <section class="pricing" id="pricing">
   <div class="wrap">
     <div class="price-grid">
       <div class="price-copy">
-        <h2>One price. No surprises.</h2>
-        <span class="hand">less than one bad post costs you ↘</span>
+        <h2>One plan. Everything in it.</h2>
+        <p class="sub">Priced for one founder writing their own posts, not a marketing team.</p>
+        <span class="hand">7-day refund, no drama ↘</span>
       </div>
       <div class="page-wrap" id="pageWrap">
         <span class="tape" aria-hidden="true"></span><span class="tape t2" aria-hidden="true"></span>
@@ -362,9 +550,11 @@ h2{font-family:var(--display);font-weight:900;font-size:clamp(2.3rem,4.6vw,4.1re
           <div class="price" id="price">₹999<small>/mo</small><svg viewBox="0 0 220 100" preserveAspectRatio="none" aria-hidden="true"><path class="draw" d="M30 18C80 2 190 4 210 44c14 34-60 52-116 50C36 92 6 74 12 46 16 26 44 12 80 8"/></svg></div>
           <span class="stamp">Sample price</span>
           <ul class="list">
-            <li><svg viewBox="0 0 26 26" aria-hidden="true"><path class="draw" d="M3 14l7 7L23 4"/></svg>Unlimited cited drafts</li>
-            <li><svg viewBox="0 0 26 26" aria-hidden="true"><path class="draw" d="M3 14l7 7L23 4"/></svg>One voice, yours</li>
-            <li><svg viewBox="0 0 26 26" aria-hidden="true"><path class="draw" d="M3 14l7 7L23 4"/></svg>Cancel any time</li>
+            <li><svg viewBox="0 0 26 26" aria-hidden="true"><path class="draw" d="M3 14l7 7L23 4"/></svg>30 source-grounded posts a month</li>
+            <li><svg viewBox="0 0 26 26" aria-hidden="true"><path class="draw" d="M3 14l7 7L23 4"/></svg>Daily news crawl for your industry</li>
+            <li><svg viewBox="0 0 26 26" aria-hidden="true"><path class="draw" d="M3 14l7 7L23 4"/></svg>Fact checks and the evidence trail</li>
+            <li><svg viewBox="0 0 26 26" aria-hidden="true"><path class="draw" d="M3 14l7 7L23 4"/></svg>Scheduling and LinkedIn publishing</li>
+            <li><svg viewBox="0 0 26 26" aria-hidden="true"><path class="draw" d="M3 14l7 7L23 4"/></svg>An image for every post</li>
           </ul>
           <a class="btn magnet" href="#">Start free <span class="arr">→</span></a>
         </div>
@@ -382,7 +572,8 @@ h2{font-family:var(--display);font-weight:900;font-size:clamp(2.3rem,4.6vw,4.1re
     <path d="M64 76l8 8 15-17" fill="none" stroke="#19244e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
   <div class="wrap">
-    <h2>Post with <span class="mark" id="finalMark">receipts.<span class="sweep"></span></span></h2>
+    <h2>Stop guessing at the <span class="mark" id="finalMark">numbers.<span class="sweep"></span></span></h2>
+    <p class="sub" style="margin:0 auto 34px;text-align:center">Connect LinkedIn, tell it what you care about, and read your first draft tomorrow morning.</p>
     <a class="btn lg magnet" href="#">Start free <span class="arr">→</span></a>
   </div>
 </section>
@@ -419,8 +610,8 @@ function connect(svg,a,b,opt){
   var r=svg.getBoundingClientRect(),A=a.getBoundingClientRect(),B=b.getBoundingClientRect();
   var sx=opt.fromX!=null?opt.fromX-r.left:(opt.fromSide==='left'?A.left:opt.fromSide==='bottom'?A.left+A.width/2:A.right)-r.left+(opt.dx1||0);
   var sy=opt.fromY!=null?opt.fromY-r.top:(opt.fromSide==='bottom'?A.bottom:A.top+A.height/2)-r.top+(opt.dy1||0);
-  var ex=(opt.toSide==='right'?B.right:opt.toSide==='top'?B.left+B.width/2:B.left)-r.left+(opt.dx2||0);
-  var ey=(opt.toSide==='top'?B.top:B.top+B.height/2)-r.top+(opt.dy2||0);
+  var ex=(opt.toSide==='right'?B.right:(opt.toSide==='top'||opt.toSide==='bottom')?B.left+B.width/2:B.left)-r.left+(opt.dx2||0);
+  var ey=(opt.toSide==='top'?B.top:opt.toSide==='bottom'?B.bottom:B.top+B.height/2)-r.top+(opt.dy2||0);
   var bend=opt.bend||60, mx=(sx+ex)/2, my=(sy+ey)/2-bend;
   var d='M'+sx+' '+sy+' Q'+mx+' '+my+' '+ex+' '+ey;
   var ang=Math.atan2(ey-my,ex-mx),h=12;
@@ -614,8 +805,70 @@ function crowd(){
   var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){size();init();once()},150)});
 }
 
+
+/* ---------- PIPELINE ticker ---------- */
+function pipe(){
+  var li=$$('#pipe li');
+  if(reduce){li.forEach(function(l){l.classList.add('done')});return}
+  var i=0;
+  function next(){
+    li.forEach(function(l,k){l.classList.toggle('done',k<i);l.classList.toggle('now',k===i)});
+    i++; if(i>li.length){setTimeout(function(){i=0;next()},2600)} else setTimeout(next,i===1?1400:900);
+  }
+  next();
+}
+/* ---------- generic reveals + highlighter sweeps ---------- */
+function reveals(){
+  if(reduce){gsap.set('.mark.sc .sweep',{scaleX:1});return}
+  $$('.rv').forEach(function(el){gsap.from(el,{y:40,opacity:0,duration:.8,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}})});
+  $$('.mark.sc .sweep').forEach(function(sw){gsap.to(sw,{scaleX:1,duration:.6,ease:'power2.inOut',scrollTrigger:{trigger:sw,start:'top 75%'}})});
+}
+/* ---------- LOOP ---------- */
+function loopSec(){
+  var b=$$('#loopTrack .badge'),svg=$('#loopArrows'),arr=[];svg.innerHTML='';
+  if(innerWidth>980){
+    for(var i=0;i<3;i++) arr=arr.concat(connect(svg,b[i],b[i+1],{dx1:10,dx2:-12,bend:i%2?-34:34}));
+    arr=arr.concat(connect(svg,b[3],b[0],{fromSide:'bottom',toSide:'bottom',dy1:150,dy2:150,bend:-120}));
+  }
+  if(reduce)return;
+  var tl=gsap.timeline({scrollTrigger:{trigger:'#loopTrack',start:'top 72%'}});
+  tl.from(b,{scale:0,rotate:-40,duration:.55,stagger:.28,ease:'back.out(2.2)'})
+    .add(draw($$('#loopTrack .badge path'),{duration:.6,stagger:.28}),.1)
+    .from('#loopTrack .stop .hand, #loopTrack .stop p',{y:16,opacity:0,duration:.45,stagger:.1},.2)
+    .add(draw(arr,{duration:.5,stagger:.22}),.45)
+    .from('.again',{opacity:0,y:10,duration:.5},'-=.2');
+  gsap.to(b,{y:function(i){return i%2?-6:6},duration:1.6,repeat:-1,yoyo:true,ease:'sine.inOut',stagger:.2,delay:2});
+}
+/* ---------- RULES ---------- */
+function rules(){
+  if(reduce)return;
+  $$('.rules li').forEach(function(li,i){
+    var tl=gsap.timeline({scrollTrigger:{trigger:'.rules',start:'top 78%'},delay:i*.18});
+    tl.from(li,{y:30,opacity:0,duration:.5,ease:'power3.out'}).add(draw($$('path.draw',li),{duration:.5,stagger:.15}),'-=.2');
+  });
+}
+/* ---------- SCHEDULE ---------- */
+function sched(){
+  if(reduce)return;
+  var tl=gsap.timeline({scrollTrigger:{trigger:'#planner',start:'top 75%'}});
+  tl.from('#planner',{y:80,rotate:4,opacity:0,duration:.8,ease:'power3.out'})
+    .from('#planner .mini',{x:140,y:-40,rotate:function(i){return i%2?24:-24},opacity:0,duration:.6,stagger:.18,ease:'back.out(1.6)'},'-=.3')
+    .from('#planner .rest',{opacity:0,scale:.6,duration:.4},'-=.2')
+    .from('.pl-foot',{opacity:0,y:10,duration:.4},'-=.1');
+  gsap.timeline({scrollTrigger:{trigger:'.checks',start:'top 80%'}}).from('.checks li',{x:-20,opacity:0,duration:.4,stagger:.15}).add(draw('.checks path',{duration:.35,stagger:.15}),0.1);
+}
+/* ---------- MARIGOLD ---------- */
+function mari(){
+  if(reduce)return;
+  var tl=gsap.timeline({scrollTrigger:{trigger:'#mari',start:'top 72%'}});
+  tl.from('#mari',{scale:.94,rotate:-4,opacity:0,duration:.8,ease:'power3.out'})
+    .add(draw('.moon path',{duration:.9}),'-=.4')
+    .from('#log .row',{y:24,opacity:0,duration:.45,stagger:.35,ease:'power2.out'},'-=.6')
+    .from('#log .tag',{scale:0,duration:.35,stagger:.35,ease:'back.out(3)'},'<+.2');
+}
+
 function boot(){
-  hero(); story(); pricing(); final(); crowd();
+  hero(); pipe(); reveals(); loopSec(); story(); rules(); sched(); mari(); pricing(); final(); crowd();
   var rt,w=innerWidth;
   addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){if(Math.abs(innerWidth-w)<60)return;location.reload()},300)});
 }
